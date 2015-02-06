@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew doctor
+brew install wget
+sudo easy_install pip
+sudo pip install python-osc
+wget https://trac.v2.nl/raw-attachment/wiki/pyOSC/pyOSC-0.3.5b-5294.tar.gz
+tar -xf pyOSC-0.3.5b-5294.tar.gz
+sudo python pyOSC-0.3.5b-5294/setup.py install

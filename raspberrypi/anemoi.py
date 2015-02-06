@@ -4,13 +4,18 @@ import time
 import os
 import sys
 import logging
+from config_loader import ConfigLoader
 logging.basicConfig(level=logging.DEBUG)
 
-host = sys.argv[1]
-port = sys.argv[2]
-id = sys.argv[3]
+if len(sys.argv) == 2:
+    conf = ConfigLoader(sys.argv[1])
+else:
+    conf = ConfigLoader("config.json")
 
-com = Broadcaster(host=host, port=port)
+if (conf.AP_mode):
+    com = Broadcaster(host="localhost", port=conf.websocket_port)
+else:
+    com = Broadcaster(host=conf.webserver, port=conf.websocket_port)
 
 
 def speedUpdate(value):

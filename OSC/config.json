@@ -1,0 +1,8 @@
+{
+  "wbsocket_port": 8080,
+  "OSC_port":9000,
+  "AP_mode": false,
+  "webserver": "http://outside.mediawerf.net",
+  "sensor_name": "Rotterdam",
+  "UDP_port":9090
+}
